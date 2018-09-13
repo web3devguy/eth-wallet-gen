@@ -1,3 +1,5 @@
+const mongoose = require ( 'mongoose' );
+const Account = mongoose.model ( 'Account' );
 const ethereum_controller = require('./ethereum.controller');
 
 exports.new_account = async function ( req, res ) {
@@ -18,7 +20,7 @@ exports.new_account = async function ( req, res ) {
     if ( err ) {
       res.send( err );
     }
-    // console.log ( "***" + ( dbResponse ) + "***" );
-    // res.send ( dbResponse );
+    console.log ( "***" + ( dbResponse ) + "***" );
+    res.send ( dbResponse );
   });
 }
