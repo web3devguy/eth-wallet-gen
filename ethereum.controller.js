@@ -6,6 +6,7 @@ const accounts = new Accounts('ws://localhost:3030');
 
 const web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/"));
 
+// this contains the web3 logic for grabbing the data from the ethereum blockchain
 exports.get_new_address = async function (req,res) {
     console.log("*** ETH GET NEW ADDRESS ***");
     let ethData = {};
