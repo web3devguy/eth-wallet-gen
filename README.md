@@ -1,6 +1,8 @@
 # eth-wallet-gen
 
-
+<h5> This is an application that uses Infura as the API call to Generate a Ethereum Wallet Address. 
+Then take the Ethereum Wallet Data and parse it over via JSON to the MongoDB.
+This concept can be applied to many different applications involving generating Decentralized Data and storing that Data via Centralized.
 
 <h3># npm i --save
 
