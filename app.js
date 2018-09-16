@@ -7,14 +7,15 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+// the port we will be using for access
 let port = 3030;
 if (process.env.SERVER_PORT != undefined) {
     port = process.env.SERVER_PORT
 }
 
-// vvv Set up mongoose connection
+// This Sets up mongoose connection
 const mongoose = require('mongoose');
-// REVIEW: register schemas
+// this requires our mongoose schema
 require('./account.model.js');
 
 mongoose.Promise = global.Promise;
@@ -23,8 +24,9 @@ mongoose.connect('mongodb://localhost/account', { useNewUrlParser: true });
 let db = mongoose.connection;
 // test MongoDB connection
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+// This Sets up mongoose connection
 let accountDB = db.collection("accounts");
-// ^^^ Set up mongoose connection
+
 
 // Imports routes for the products
 const account = require('./account.route.js');
